@@ -7,4 +7,4 @@ class Square:
         self.image = image
 
     def draw(self, screen):
-        self.image.blit(screen)
+        screen.blit(self.image, self.coords)

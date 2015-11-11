@@ -8,6 +8,7 @@ pygame.init()
 
 size = 720, 540
 black = 0, 0, 0
+white = 255, 255, 255
 
 screen = pygame.display.set_mode(size)
 
@@ -21,7 +22,7 @@ while 1:
         if event.type == pygame.QUIT:
             sys.exit()
 
-    screen.fill(black)
+    screen.fill(white)
     world.draw(screen)
     pygame.display.flip()
     clock.tick(30)
