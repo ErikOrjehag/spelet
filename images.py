@@ -1,5 +1,5 @@
 import pygame
-import os.path.join
+import os.path
 pygame.init()
 
-blue = pygame.image.load(os.path.join('data', 'bla.png'))
+blue = pygame.image.load(os.path.join('data', 'blue.png'))
