@@ -1,6 +1,5 @@
-﻿class my_class(object):
-    pass
+﻿import pygame
 
+pygame.init()
 
-
-
+print("hej")
