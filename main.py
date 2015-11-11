@@ -1,20 +1,18 @@
 import sys
 import pygame
 
-from Map import Map
+from Tile import Tile
+from World import World
 
 pygame.init()
 
-size = width, height = 720, 540
-speed = [2, 2]
+size = 720, 540
 black = 0, 0, 0
 
 screen = pygame.display.set_mode(size)
 
-map = Map()
-map.load('./map.txt')
-
-print(map.tiles)
+world = World()
+world.map.load("./map.txt")
 
 clock = pygame.time.Clock()
 
@@ -24,6 +22,6 @@ while 1:
             sys.exit()
 
     screen.fill(black)
-    map.draw(screen)
+    world.draw(screen)
     pygame.display.flip()
     clock.tick(30)

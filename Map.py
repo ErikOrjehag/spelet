@@ -1,5 +1,7 @@
 import pygame
 
+from Tile import Tile
+
 
 class Map:
 
@@ -17,8 +19,9 @@ class Map:
         content = file.read().strip()
         file.close()
         for line in content.split("\n"):
-            posX, posY, type = line.split(" ")
-            self.tiles[(int(posX), int(posY))] = int(type)
+            posX, posY = line.split(":")[0].split()
+            tile = Tile.from_str(line.split(":")[1].strip())
+            self.tiles[(int(posX), int(posY))] = tile
 
     def save(self, path):
         """
@@ -28,8 +31,9 @@ class Map:
         """
         file = open(path, 'w')
         file.truncate()
-        for pos, type in self.tiles.iteritems():
-            file.write("%d %d %d\n" % (pos[0], pos[1], type))
+        for pos, tile in self.tiles.iteritems():
+            print(tile)
+            file.write("%d %d: " % (pos[0], pos[1]) + tile.to_str() + "\n")
         file.close()
 
     def draw(self, surface):
