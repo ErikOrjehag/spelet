@@ -6,10 +6,17 @@ class Character:
         self.pos = pygame.math.Vector2(pos)
         self.health = 10
         self.velocity = pygame.math.Vector2(0, 0)
-        self.acceleration = 0
+        self.acceleration = pygame.math.Vector2(0, 0)
 
     def update(self):
         self.pos += self.velocity
 
-    def move(self):
-        self.velocity += self.acceleration
+
+        #self.velocity *= 0
+        self.acceleration = 0
+
+    def move(self, dir):
+        self.acceleration += dir*5
+
+    def draw(self, screen):
+        screen.blit(self.image, self.pos)

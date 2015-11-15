@@ -1,5 +1,6 @@
 import sys, pygame
 from Square import *
+from Character import *
 import Images
 pygame.init()
 
@@ -17,7 +18,10 @@ coords = 10, 10
 
 bla = Square(coords, Images.blue)
 
+player = Character((100, 100), Images.blue)
+
 gameobjects.append(bla)
+gameobjects.append(player)
 
 
 
@@ -31,13 +35,13 @@ while 1:
         # Checking keys
         #
         if event.type == pygame.KEYDOWN and event.key == pygame.K_UP:
-            bla.coords = bla.coords[0], bla.coords[1] - 5
+            player.move((0, -1))
         elif event.type == pygame.KEYDOWN and event.key == pygame.K_RIGHT:
-            bla.coords = bla.coords[0] + 5, bla.coords[1]
+            player.move((1, 0))
         elif event.type == pygame.KEYDOWN and event.key == pygame.K_DOWN:
-            bla.coords = bla.coords[0], bla.coords[1] + 5
+            player.move((0, 1))
         elif event.type == pygame.KEYDOWN and event.key == pygame.K_LEFT:
-            bla.coords = bla.coords[0] - 5, bla.coords[1]
+            player.move((-1, 0))
 
     screen.fill(white)
 
