@@ -1,4 +1,8 @@
 class Vector2D(object):
+    """
+    A 2D vector class that adds support
+    for mathematical calculations.
+    """
     def __init__(self, x = 0, y = 0, vec = (0, 0)):
         if vec[0] or vec[1]:
             self.x = vec[0]
