@@ -18,7 +18,7 @@ coords = 10, 10
 
 bla = Square(coords, Images.blue)
 
-player = Character((100, 100), Images.blue)
+player = Character((50, 50), Images.blue)
 
 gameobjects.append(bla)
 gameobjects.append(player)
